@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Search Restaurent</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+        <script type="text/javascript" src="index.js"></script>  
+    </head>
+    <body>
+        
+
+            <div class="form-group mx-sm-3 mb-2">
+                <br>
+                <!-- <label for="location" class="col-sm-4 col-form-label">Enter the location </label> -->
+                <div class="row">
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="city" placeholder="Enter the city or coordinates (Latitude,Longtitude)">
+                    </div>
+                    <div class="col-sm-3">
+                        <!-- document.getElementById('city').value -->
+                        <button class="btn btn-primary mb-2" id="btnSearch" onclick="searchLocation()" >Search</button>
+                    </div>
+                </div>
+            </div>
+
+        <!-- <button class="btn btn-primary mb-2" id="btnSearch" onclick="searchLocation()" >Search</button> -->
+
+    </body>
+</html>

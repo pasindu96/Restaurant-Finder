@@ -16,12 +16,12 @@ public class RestaurantController {
 
     @RequestMapping(value="/{location}")
     public List<String> getRestaurantByCity(@PathVariable("location") String location){
-            return service.searchRestaurant(location.replace("location=",""));
+        return service.searchRestaurant(location.replace("location=",""));
     }
 
-    @GetMapping(value="/{lan}/{lon}",consumes =  MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/{lan}/{lon}")
     public List<String> getRestaurantByCordinates(@PathVariable("lan") String lan,@PathVariable("lon") String lon){
-            return service.searchRestaurant(lan.replace("lan=",""),lon.replace("lon=",""));
+        System.out.println(lan+" "+lon);
+        return service.searchRestaurant(lan.replace("lan=",""),lon.replace("lon=",""));
     }
 }

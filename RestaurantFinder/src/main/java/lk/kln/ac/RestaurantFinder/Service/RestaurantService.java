@@ -46,7 +46,6 @@ public class RestaurantService {
         try {
             response=client.execute(getRequest);
             HttpEntity entity=response.getEntity();
-
             Pattern p = Pattern.compile("[n][a][m][e][\"][:][\"][a-z A-Z - ']{0,}");
             Matcher m = p.matcher(EntityUtils.toString(entity));
             while(m.find()) {

@@ -3,8 +3,13 @@
         <title>Search Restaurent</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
         <script type="text/javascript" src="index.js"></script>  
+        <style>
+            table, td {
+              border: 1px solid black;
+            }
+        </style>
     </head>
     <body>
         
@@ -14,16 +19,23 @@
                 <!-- <label for="location" class="col-sm-4 col-form-label">Enter the location </label> -->
                 <div class="row">
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="city" placeholder="Enter the city or coordinates (Latitude,Longtitude)">
+                        <input type="text" class="form-control" id="city" placeholder="Enter the city or coordinates (Latitude,Longtitude)" required>
                     </div>
                     <div class="col-sm-3">
-                        <!-- document.getElementById('city').value -->
-                        <button class="btn btn-primary mb-2" id="btnSearch" onclick="searchLocation()" >Search</button>
+                        <button class="btn btn-primary mb-2" id="btnSearch" onclick="searchLocation(document.getElementById('city').value)" >Search</button>
                     </div>
                 </div>
             </div>
+            <br>
+            <table id="tblRestaurant">
+                <tr>
+                  <td>ID</td>
+                  <td>Restaurant</td>
+                </tr>
+            </table>
+        <br>
 
-        <!-- <button class="btn btn-primary mb-2" id="btnSearch" onclick="searchLocation()" >Search</button> -->
+        <button class="btn btn-primary mb-2" id="btnDownload" onclick="downloadResult()" >Download Result as a PDF</button>
 
     </body>
 </html>
